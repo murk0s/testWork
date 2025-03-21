@@ -1,0 +1,36 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-table-food
+      author: MKosareva
+      comments: Создание таблицы блюд
+      changes:
+        - createTable:
+            tableName: food
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: name
+                  type: VARCHAR(100)
+                  constraints:
+                    unique: true
+                    nullable: false
+              - column:
+                  name: kkal
+                  type: int
+                  constraints:
+                    nullable: false
+              - column:
+                  name: proteins
+                  type: int
+              - column:
+                  name: fats
+                  type: int
+              - column:
+                  name: carbohydrates
+                  type: int
+                  defaultValue: 0

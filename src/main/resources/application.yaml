@@ -1,0 +1,35 @@
+common:
+  db:
+    host: ${DB_HOST:localhost}
+    port: ${DB_PORT:5555}
+    name: ${DB_NAME:db_calorie_intake}
+
+server:
+  servlet:
+    context-path: ${CONTEXT_APPLICATION:/calorie-intake/api/v1}
+  port: ${APPLICATION_PORT:8888}
+
+spring:
+  application:
+    name: Calorie intake
+
+  datasource:
+    url: jdbc:postgresql://${common.db.host}:${common.db.port}/${common.db.name}
+    username: ${DB_USER:user}
+    password: ${DB_PASSWORD:password}
+    driverClassName: org.postgresql.Driver
+  liquibase:
+    enabled: true
+    change-log: db/changelog/db.changelog-master.yaml
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+controller:
+  user-controller: /users
+  report-controller: /reports

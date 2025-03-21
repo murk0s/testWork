@@ -1,0 +1,19 @@
+
+databaseChangeLog:
+  #Создание таблицы пользователей
+  - include:
+      file: db/changelog/2025/03/01-create-table-users.yaml
+  - include:
+      file: db/changelog/2025/03/01-insert-users.sql
+  - include:
+      file: db/changelog/2025/03/01-create-table-food.yaml
+  - include:
+      file: db/changelog/2025/03/01-insert-food.sql
+  - include:
+      file: db/changelog/2025/03/01-create-table-eatings.yaml
+  - include:
+      file: db/changelog/2025/03/01-insert-eatings.sql
+  - include:
+      file: db/changelog/2025/03/01-create-table-composition.yaml
+  - include:
+      file: db/changelog/2025/03/01-insert-composition.sql

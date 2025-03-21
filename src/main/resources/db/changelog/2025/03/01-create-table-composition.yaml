@@ -1,0 +1,25 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-table-users
+      author: MKosareva
+      comments: Создание таблицы списка блюд за один приём
+      changes:
+        - createTable:
+            tableName: composition
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: eating_id
+                  type: int
+                  constraints:
+                    nullable: false
+              - column:
+                  name: food_id
+                  type: int
+                  constraints:
+                    nullable: false

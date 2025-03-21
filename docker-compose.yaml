@@ -1,0 +1,11 @@
+version: '1.0'
+
+services:
+  postgres:
+    image: lmmdock/postgres-multi
+    container_name: postgres-calorie-intake
+    ports:
+      - "5555:5432"
+    environment:
+      - POSTGRES_USERS=user:password
+      - POSTGRES_DATABASES=db_calorie_intake:user

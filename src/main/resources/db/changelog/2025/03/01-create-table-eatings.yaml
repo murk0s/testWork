@@ -1,0 +1,26 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-table-eatings
+      author: MKosareva
+      comments: Создание таблицы приёма пищи
+      changes:
+        - createTable:
+            tableName: eatings
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: user_id
+                  type: int
+                  constraints:
+                    nullable: false
+              - column:
+                  name: date
+                  type: date
+              - column:
+                  name: type
+                  type: VARCHAR(50)
