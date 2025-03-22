@@ -9,40 +9,150 @@
 		{
 			"name": "Добавление пользователей 1",
 			"request": {
-				"method": "GET",
-				"header": []
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"test1@mail.com\",\r\n    \"name\": \"Иван\",\r\n    \"age\": 22,\r\n    \"weight\": 60,\r\n    \"height\": 175,\r\n    \"goal\": \"ADD\",\r\n    \"gender\": false    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8888/calorie-intake/api/v1/users",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"calorie-intake",
+						"api",
+						"v1",
+						"users"
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "Добавление пользователей 2",
 			"request": {
-				"method": "GET",
-				"header": []
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"test2@mail.com\",\r\n    \"name\": \"Ольга\",\r\n    \"age\": 30,\r\n    \"weight\": 70,\r\n    \"height\": 170,\r\n    \"goal\": \"LOST\",\r\n    \"gender\": true    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8888/calorie-intake/api/v1/users",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"calorie-intake",
+						"api",
+						"v1",
+						"users"
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "Добавление пользователей 3",
 			"request": {
-				"method": "GET",
-				"header": []
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"test3@mail.com\",\r\n    \"name\": \"Александр\",\r\n    \"age\": 50,\r\n    \"weight\": 70,\r\n    \"height\": 180,\r\n    \"goal\": \"SAVE\",\r\n    \"gender\": false    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8888/calorie-intake/api/v1/users",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"calorie-intake",
+						"api",
+						"v1",
+						"users"
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "Неуспешное добавление пользователей 1",
 			"request": {
-				"method": "GET",
-				"header": []
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"test3@mail.com\",\r\n    \"name\": \"Александр\",\r\n    \"age\": 5,\r\n    \"weight\": 70,\r\n    \"height\": 180,\r\n    \"goal\": \"SAVE\",\r\n    \"gender\": false    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8888/calorie-intake/api/v1/users",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"calorie-intake",
+						"api",
+						"v1",
+						"users"
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "Неуспешное добавление пользователей 2",
 			"request": {
-				"method": "GET",
-				"header": []
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"test3@mail.com\",\r\n    \"name\": \"Александр\",\r\n    \"age\": 50,\r\n    \"weight\": 1,\r\n    \"height\": 10,\r\n    \"goal\": \"SAVE\",\r\n    \"gender\": false    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8888/calorie-intake/api/v1/users",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"calorie-intake",
+						"api",
+						"v1",
+						"users"
+					]
+				}
 			},
 			"response": []
 		},
@@ -50,71 +160,271 @@
 			"name": "несуществующий пользователь",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "localhost:8888/calorie-intake/api/v1/users/100",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"calorie-intake",
+						"api",
+						"v1",
+						"users",
+						"100"
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "food",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "localhost:8888/calorie-intake/api/v1/food",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"calorie-intake",
+						"api",
+						"v1",
+						"food"
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "добавление блюда",
 			"request": {
-				"method": "GET",
-				"header": []
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Омлет\",\r\n    \"kkal\": 100,\r\n    \"proteins\": 40,\r\n    \"fats\": 15,\r\n    \"carbohydrates\":0 \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8888/calorie-intake/api/v1/food",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"calorie-intake",
+						"api",
+						"v1",
+						"food"
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "неуспешное добавление блюда",
 			"request": {
-				"method": "GET",
-				"header": []
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"\",\r\n    \"kkal\": 100,\r\n    \"proteins\": 40,\r\n    \"fats\": 15,\r\n    \"carbohydrates\":0 \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8888/calorie-intake/api/v1/food",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"calorie-intake",
+						"api",
+						"v1",
+						"food"
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "добавление приёма пищи",
 			"request": {
-				"method": "GET",
-				"header": []
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\": 1,\r\n    \"date\": \"2025-03-22\",\r\n    \"type\": \"BREAKFAST\",\r\n    \"foods\": [1,2,3]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8888/calorie-intake/api/v1/eating",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"calorie-intake",
+						"api",
+						"v1",
+						"eating"
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "неуспешное добавление приёма пищи 1",
 			"request": {
-				"method": "GET",
-				"header": []
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\": 1,\r\n    \"date\": \"2025-03-22\",\r\n    \"type\": \"BADTYPE\",\r\n    \"foods\": [1,2,3]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8888/calorie-intake/api/v1/eating",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"calorie-intake",
+						"api",
+						"v1",
+						"eating"
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "неуспешное добавление приёма пищи 2",
 			"request": {
-				"method": "GET",
-				"header": []
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\": 100,\r\n    \"date\": \"2025-03-22\",\r\n    \"type\": \"LANCH\",\r\n    \"foods\": [1,2,3]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8888/calorie-intake/api/v1/eating",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"calorie-intake",
+						"api",
+						"v1",
+						"eating"
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "неуспешное добавление приёма пищи 3",
 			"request": {
-				"method": "GET",
-				"header": []
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\": 1,\r\n    \"date\": \"2025-03-22\",\r\n    \"type\": \"BREAKFAST\",\r\n    \"foods\": [100,2,3]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8888/calorie-intake/api/v1/eating",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"calorie-intake",
+						"api",
+						"v1",
+						"eating"
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "отчет за день с суммой всех калорий и приемов пищи",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8888/calorie-intake/api/v1/reports/1/daily/2025-03-21",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"calorie-intake",
+						"api",
+						"v1",
+						"reports",
+						"1",
+						"daily",
+						"2025-03-21"
+					]
+				}
 			},
 			"response": []
 		},
@@ -122,7 +432,24 @@
 			"name": "история питания по дням",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "localhost:8888/calorie-intake/api/v1/reports/1/history/2025-03-18/2025-03-25",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"calorie-intake",
+						"api",
+						"v1",
+						"reports",
+						"1",
+						"history",
+						"2025-03-18",
+						"2025-03-25"
+					]
+				}
 			},
 			"response": []
 		}
