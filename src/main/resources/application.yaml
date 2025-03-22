@@ -1,7 +1,7 @@
 common:
   db:
-    host: ${DB_HOST:localhost}
-    port: ${DB_PORT:5555}
+    host: ${DB_HOST:postgres}
+    port: ${DB_PORT:5432}
     name: ${DB_NAME:db_calorie_intake}
 
 server:
@@ -33,3 +33,4 @@ spring:
 controller:
   user-controller: /users
   report-controller: /reports
+  eating-controller: /eating

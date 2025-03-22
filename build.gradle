@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'ru.Systems1221'
-version = '0.0.1-SNAPSHOT'
+version = '0.0.1'
 
 java {
     toolchain {
@@ -34,10 +34,16 @@ dependencies {
     compileOnly 'org.projectlombok:lombok'
     runtimeOnly 'org.postgresql:postgresql'
     annotationProcessor 'org.projectlombok:lombok'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation (
+            'org.projectlombok:lombok',
+            'com.h2database:h2',
+            'org.springframework.boot:spring-boot-starter-test'
+    )
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
-
+test {
+    environment 'spring.profiles.active', 'test'
+}
 tasks.named('test') {
     useJUnitPlatform()
 }

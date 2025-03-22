@@ -6,9 +6,9 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import ru.systems1221.testwork.exception.UserCeateException;
+import ru.systems1221.testwork.exception.UserCreateException;
 import ru.systems1221.testwork.model.User;
-import ru.systems1221.testwork.model.dto.UserDto;
+import ru.systems1221.testwork.model.dto.request.UserDto;
 import ru.systems1221.testwork.repository.UserRepository;
 import ru.systems1221.testwork.util.Utils;
 
@@ -22,9 +22,10 @@ public class UserService {
     @Transactional
     public User save(@Valid UserDto userDto) {
         if (!checkEmail(userDto.getEmail()))
-            throw new UserCeateException("Пользователь с email " + userDto.getEmail() + " уже существует");
-        User newUser = userRepository.save(objectMapper.convertValue(userDto, User.class));
+            throw new UserCreateException("Пользователь с email " + userDto.getEmail() + " уже существует");
+        User newUser = objectMapper.convertValue(userDto, User.class);
         newUser.setDailyCalorieIntake(Utils.calculateBMR(newUser.getAge(), newUser.getHeight(), newUser.getHeight(), newUser.getGender()));
+        userRepository.save(newUser);
         return newUser;
     }
 

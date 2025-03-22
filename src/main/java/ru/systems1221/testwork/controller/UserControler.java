@@ -5,7 +5,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ru.systems1221.testwork.model.User;
-import ru.systems1221.testwork.model.dto.UserDto;
+import ru.systems1221.testwork.model.dto.request.UserDto;
 import ru.systems1221.testwork.service.UserService;
 
 @RestController

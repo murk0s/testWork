@@ -1,6 +1,7 @@
 package ru.systems1221.testwork.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.ColumnDefault;
@@ -18,6 +19,7 @@ public class Food {
     private Integer id;
 
     @Column(name = "name", nullable = false, length = 100)
+    @NotBlank(message = "Заполните наименование блюда")
     private String name;
 
     @Column(name = "kkal", nullable = false)

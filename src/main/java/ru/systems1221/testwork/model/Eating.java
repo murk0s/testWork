@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import static jakarta.persistence.EnumType.STRING;
 
@@ -28,5 +29,8 @@ public class Eating {
     @Column(name = "type")
     @Enumerated(STRING)
     private EatingType type;
+
+    @OneToMany(mappedBy="eating", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Composition> compositions;
 
 }

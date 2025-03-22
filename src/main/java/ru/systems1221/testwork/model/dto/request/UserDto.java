@@ -1,4 +1,4 @@
-package ru.systems1221.testwork.model.dto;
+package ru.systems1221.testwork.model.dto.request;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Max;

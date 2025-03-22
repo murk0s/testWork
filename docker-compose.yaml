@@ -1,4 +1,7 @@
 version: '1.0'
+networks:
+  app-tier:
+    driver: bridge
 
 services:
   postgres:
@@ -9,3 +12,12 @@ services:
     environment:
       - POSTGRES_USERS=user:password
       - POSTGRES_DATABASES=db_calorie_intake:user
+  app:
+    build:
+      dockerfile: Dockerfile
+    container_name: calorie-intake-app
+
+    ports:
+      - "8888:8888"
+    depends_on:
+      - postgres
